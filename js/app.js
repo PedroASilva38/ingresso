@@ -2,6 +2,11 @@ function comprar() {
     tipoIngresso = document.getElementById('tipo-ingresso').value
     qtdComprada = document.getElementById('qtd').value
 
+    if (qtdComprada < 0) {
+        document.getElementById('qtd').value = ''
+        return
+    }
+
     switch (tipoIngresso) {
         case 'superior':
             terminarCompra('qtd-superior', qtdComprada)
